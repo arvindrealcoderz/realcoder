@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>OnlineExaminationManagementSystem</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+   <context-param>
+     <param-name>UPLOAD_LOC</param-name>
+     <param-value>c:/store/</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>log4j-config-location</param-name>
+    <param-value>WEB-INF/log4j.properties</param-value>
+  </context-param>
+  
+  <listener>
+  	<listener-class>com.arvind.realcoderz.logger.ContextListener</listener-class>
+  </listener>
+  
+  <servlet>
+    <display-name>TestServlet</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>com.arvind.realcoderz.logger.TestLog4jServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>adminRegistration</servlet-name>
+  	<servlet-class>com.realcoderz.test.AdminRegistration</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>adminRegistration</servlet-name>
+  	<url-pattern>/html/adminReg</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+  	<servlet-name>studentRegistration</servlet-name>
+  	<servlet-class>com.realcoderz.test.StudentRegistration</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>studentRegistration</servlet-name>
+  	<url-pattern>/html/studentReg</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+  	<servlet-name>facultyRegistration</servlet-name>
+  	<servlet-class>com.realcoderz.test.FacultyRegistration</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>facultyRegistration</servlet-name>
+  	<url-pattern>/html/facultyReg</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+  	<servlet-name>adminLogin</servlet-name>
+  	<servlet-class>com.realcoderz.test.AdminLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>adminLogin</servlet-name>
+  	<url-pattern>/html/adminlogin</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+   <servlet>
+  	<servlet-name>studentLogin</servlet-name>
+  	<servlet-class>com.realcoderz.test.StudentLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>studentLogin</servlet-name>
+  	<url-pattern>/html/studentlogin</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+  	<servlet-name>facultyLogin</servlet-name>
+  	<servlet-class>com.realcoderz.test.FacultyLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>facultyLogin</servlet-name>
+  	<url-pattern>/html/facultylogin</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+     <servlet>
+  	<servlet-name>facultyPasswordUpdate</servlet-name>
+  	<servlet-class>com.realcoderz.test.UpdatePassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>facultyPasswordUpdate</servlet-name>
+  	<url-pattern>/html/facultypasswordUpdate</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+   
+     <servlet>
+  	<servlet-name>studentPasswordUpdate</servlet-name>
+  	<servlet-class>com.realcoderz.test.StudentUpdatePassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>studentPasswordUpdate</servlet-name>
+  	<url-pattern>/html/studentPasswordChange</url-pattern>
+  </servlet-mapping>
+  
+  
+       <servlet>
+  	<servlet-name>viewStudentDetails</servlet-name>
+  	<servlet-class>com.realcoderz.test.ViewStudentDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>viewStudentDetails</servlet-name>
+  	<url-pattern>/viewStudentDetail</url-pattern>
+  </servlet-mapping>
+  
+    
+  
+  
+  
+  
+</web-app>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html style="background-color: lightcyan;">
+<head>
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/loginform.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<script src="../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.js"></script>
+<script type="text/javascript" src="../js/registration.js"></script>
+<!-- <script type="text/javascript" src="../js/faculty_login.js"></script>
+ -->
+
+<script type="text/javascript">
+    function madeAjaxCall() {
+	var name = $("#name").val();
+	var address = $("#address").val();
+	var email = $("#email").val();
+	var mobile = $("#mobile").val();
+	var aadhaar = $("#aadhaar").val();
+	var password = $("#password").val();
+	var conformpassword = $("#conformpassword").val();
+
+	$.ajax({
+	    type : "post",
+	    url : 'adminReg',
+	    data : {
+		name : name,
+		address : address,
+		email : email,
+		mobile : mobile,
+		pass : password,
+		conformpassword : conformpassword,
+		aadhaar_card : aadhaar
+	    },
+	    cache : false,
+	    success : function(response) {
+		$('#somediv').html(response);
+		$('#div2').hide();
+	    },
+	    error : function() {
+		$('#somediv').html(response);
+		$("#div1").show();
+	    }
+	});
+    }
+</script>
+
+
+
+
+
+</head>
+
+
+
+<body style="background-color: gainsboro;">
+	<div class="container col-sm-8">
+		<h1 style="color: red;">Welcome to admin registration</h1>
+	</div>
+
+
+	<div style="color: red; text-align: center;" id="div1">
+		<h1 id="somediv"></h1>
+	</div>
+
+
+
+	<div class="container " id="div2">
+		<form method="post">
+			<div class="form-group mt-4">
+				<label class="control-label " for="name">Name:</label>
+				<div class="input-group level">
+					<input class="form-control col-sm-8 "
+						placeholder="Enter your name " name="name" type="text" id="name" />
+				</div>
+			</div>
+
+			<div class="form-group mt-4">
+				<label class="control-label " for="address">Address:</label>
+				<div class="input-group level">
+					<input class="form-control col-sm-8 "
+						placeholder="Enter your email address" name="address" type="text"
+						id="address" />
+				</div>
+			</div>
+
+			<div class="form-group mt-4">
+				<label class="control-label " for="email">Email:</label>
+				<div class="input-group level">
+					<input class="form-control col-sm-8 "
+						placeholder="Enter your email address" name="email" type="text"
+						id="email" />
+				</div>
+			</div>
+
+
+			<div class="form-group mt-4">
+				<label class="control-label " for="password">Mobile:</label>
+				<div class="input-group ">
+					<input class="form-control col-sm-8" type="number"
+						attern="\d{3}[\-]\d{3}[\-]\d{4}" required
+						placeholder="Enter Your Mobile " name="mobile" id="mobile">
+				</div>
+			</div>
+
+			<div class="form-group mt-4">
+				<label class="control-label" for="aadhaar">Aadhaar:</label>
+				<div class="input-group">
+					<input class="form-control col-sm-8"
+						placeholder="Enter your aadhaar" name="aadhaar" type="text"
+						id="aadhaar" maxLength="19" />
+				</div>
+
+			</div>
+			<div class="form-group mt-4">
+				<label class="control-label" for="aadhaar">Password :</label>
+				<div class="input-group">
+					<input class="form-control col-sm-8"
+						placeholder="Enter your password" name="password" type="password"
+						id="password" />
+
+				</div>
+			</div>
+
+			<div class="form-group mt-4">
+				<label class="control-label" for="conformpassword">Conform
+					Password :</label>
+				<div class="input-group">
+					<input class="form-control col-sm-8"
+						placeholder="Enter conform  your password" name="conformpassword"
+						type="password" id="conformpassword" />
+
+				</div>
+			</div>
+
+
+			<div class="col text-center mt-5 col-sm-2">
+				<input type="submit" onclick="madeAjaxCall()"
+					value="admin registration " class="btn btn-primary" id="somebutton">
+			</div>
+		</form>
+	</div>
+	<div class="w3-display-container w3-display-topright">
+		<a href="/OnlineExaminationManagementSystem">
+			<button class="w3-button w3-green">
+				<img alt="click here to home" src="../images/homebtn.jpg"
+					width="55px" height="55px">
+			</button>
+		</a>
+	</div>
+</body>
+</html>
